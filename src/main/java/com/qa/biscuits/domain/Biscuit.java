@@ -16,7 +16,7 @@ public class Biscuit {
 	}
 
 	public Biscuit() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
 	public String getName() {
