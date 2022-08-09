@@ -3,11 +3,13 @@ package com.qa.biscuits.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.qa.biscuits.domain.Biscuit;
 
 @Service
+@Primary
 public class BiscuitServiceList implements BiscuitService {
 
 	private List<Biscuit> biscuits;

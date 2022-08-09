@@ -5,6 +5,8 @@ import java.util.List;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -46,9 +48,9 @@ public class BiscuitController {
 	}
 
 	@GetMapping("/get/{id}")
-	public Biscuit getById(@PathVariable int id) {
+	public ResponseEntity<Biscuit> getById(@PathVariable int id) {
 		System.out.println("ID: " + id);
-		return this.service.getById(id);
+		return new ResponseEntity<Biscuit>(this.service.getById(id), HttpStatus.I_AM_A_TEAPOT);
 	}
 
 	@PatchMapping("/update/{id}")
