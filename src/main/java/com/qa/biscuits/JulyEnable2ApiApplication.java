@@ -6,7 +6,6 @@ import org.springframework.context.ApplicationContext;
 
 import com.qa.biscuits.rest.BiscuitController;
 import com.qa.biscuits.service.BiscuitService;
-import com.qa.biscuits.service.BiscuitServiceDB;
 
 @SpringBootApplication
 public class JulyEnable2ApiApplication {
@@ -18,7 +17,7 @@ public class JulyEnable2ApiApplication {
 		System.out.println("CONTROLLER: " + context.getBean(BiscuitController.class));
 
 		// kinda works like this:
-		BiscuitController controller = new BiscuitController(new BiscuitServiceDB());
+//		BiscuitController controller = new BiscuitController(new BiscuitServiceDB());
 	}
 
 }
