@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS `biscuit` CASCADE;
+
+CREATE TABLE `biscuit` (
+	`id` INTEGER PRIMARY KEY AUTO_INCREMENT, 
+	`amount` INTEGER NOT NULL, 
+	`cost` DOUBLE NOT NULL, 
+	`name` VARCHAR(255)
+);
