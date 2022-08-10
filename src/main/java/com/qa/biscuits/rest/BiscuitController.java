@@ -37,9 +37,9 @@ public class BiscuitController {
 	}
 
 	@PostMapping("/createBiscuit")
-	public Biscuit makeBikky(@RequestBody Biscuit biscuit) {
+	public ResponseEntity<Biscuit> makeBikky(@RequestBody Biscuit biscuit) {
 		System.out.println("Body: " + biscuit);
-		return this.service.makeBikky(biscuit);
+		return new ResponseEntity<Biscuit>(this.service.makeBikky(biscuit), HttpStatus.CREATED);
 	}
 
 	@RequestMapping(method = RequestMethod.GET, path = "/getAll")
@@ -50,7 +50,7 @@ public class BiscuitController {
 	@GetMapping("/get/{id}")
 	public ResponseEntity<Biscuit> getById(@PathVariable int id) {
 		System.out.println("ID: " + id);
-		return new ResponseEntity<Biscuit>(this.service.getById(id), HttpStatus.I_AM_A_TEAPOT);
+		return new ResponseEntity<Biscuit>(this.service.getById(id), HttpStatus.OK);
 	}
 
 	@PatchMapping("/update/{id}")
