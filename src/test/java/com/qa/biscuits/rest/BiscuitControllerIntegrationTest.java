@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.web.servlet.MockMvc;
@@ -25,6 +26,7 @@ import com.qa.biscuits.domain.Biscuit;
 @AutoConfigureMockMvc
 @Sql(scripts = { "classpath:biscuit-schema.sql",
 		"classpath:biscuit-data.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
+@ActiveProfiles("test") // sets profile to "test" so it uses the application-test.properties
 public class BiscuitControllerIntegrationTest {
 
 	@Autowired
