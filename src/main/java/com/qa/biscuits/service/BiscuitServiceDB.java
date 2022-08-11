@@ -36,7 +36,7 @@ public class BiscuitServiceDB implements BiscuitService {
 
 	@Override
 	public Biscuit updateBiscuit(int id, String name, Integer amount, Double cost) {
-		Biscuit toUpdate = this.getById(id);
+		Biscuit toUpdate = this.repo.findById(id).get(); // fetches the existing data from the DB
 
 		if (name != null && !name.isBlank())
 			toUpdate.setName(name);
@@ -45,7 +45,7 @@ public class BiscuitServiceDB implements BiscuitService {
 		if (cost != null)
 			toUpdate.setCost(cost);
 
-		return this.repo.save(toUpdate);
+		return this.repo.save(toUpdate); // saves the new data and returns it
 	}
 
 	@Override
